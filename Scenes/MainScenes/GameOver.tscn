@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=3 uid="uid://bitr0ikqk6qyt"]
+
+[ext_resource type="Script" path="res://Scripts/GameOver.gd" id="1_lhv0o"]
+[ext_resource type="Texture2D" uid="uid://ch8he16la1hyw" path="res://Art/Background/GameOver/VadarGameOver-BG.png" id="1_ns80y"]
+[ext_resource type="Theme" uid="uid://dj4gh1nn7ignp" path="res://Themes/settingtheme.tres" id="2_pb47v"]
+[ext_resource type="FontFile" uid="uid://c6qhfk3phjwa5" path="res://Themes/Font/soloist1.ttf" id="3_y3w4l"]
+[ext_resource type="AudioStream" uid="uid://chweyh6drp848" path="res://Audio/Sound Effects/Darth-vader-breathing.mp3" id="5_hn3mx"]
+[ext_resource type="AudioStream" uid="uid://dibb16iivljst" path="res://Audio/Background/67 - Negative.mp3" id="6_wi2qa"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_lhv0o")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1915.0
+offset_bottom = 1069.0
+metadata/_edit_use_anchors_ = true
+
+[node name="background" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ns80y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Game" type="Label" parent="Control/background"]
+layout_mode = 2
+offset_left = 688.0
+offset_top = 44.0
+offset_right = 1498.0
+offset_bottom = 314.0
+scale = Vector2(1.25, 1.25)
+theme = ExtResource("2_pb47v")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.988281, 0.988281, 0.988281, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_y3w4l")
+theme_override_font_sizes/font_size = 256
+text = "Game"
+metadata/_edit_use_anchors_ = true
+
+[node name="Over" type="Label" parent="Control/background"]
+layout_mode = 2
+offset_left = 903.0
+offset_top = 240.0
+offset_right = 1704.0
+offset_bottom = 510.0
+scale = Vector2(1.25, 1.25)
+theme = ExtResource("2_pb47v")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.988281, 0.988281, 0.988281, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_y3w4l")
+theme_override_font_sizes/font_size = 256
+text = "Over"
+metadata/_edit_use_anchors_ = true
+
+[node name="restartButton" type="Button" parent="Control/background"]
+layout_mode = 0
+offset_left = 708.0
+offset_top = 776.0
+offset_right = 1375.0
+offset_bottom = 910.0
+theme = ExtResource("2_pb47v")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_y3w4l")
+theme_override_font_sizes/font_size = 100
+text = "Restart
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="quitButton" type="Button" parent="Control/background"]
+layout_mode = 0
+offset_left = 1491.0
+offset_top = 791.0
+offset_right = 1760.0
+offset_bottom = 895.0
+theme = ExtResource("2_pb47v")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_y3w4l")
+theme_override_font_sizes/font_size = 100
+text = "quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="darthvader-breathing" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("5_hn3mx")
+autoplay = true
+bus = &"effects"
+
+[node name="death_theme" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("6_wi2qa")
+autoplay = true
+
+[connection signal="pressed" from="Control/background/restartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Control/background/quitButton" to="." method="_on_quit_button_pressed"]

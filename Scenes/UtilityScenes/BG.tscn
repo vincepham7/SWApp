@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://bolf081ryfli"]
+
+[ext_resource type="Script" path="res://Scripts/BG.gd" id="1_aaqby"]
+[ext_resource type="Texture2D" uid="uid://7iehq8qm60ar" path="res://Art/Tiles/SET1_bakcground_night1.png" id="2_6s66x"]
+[ext_resource type="Texture2D" uid="uid://njvqergamedq" path="res://Art/Tiles/SET1_bakcground_night2.png" id="3_xg22t"]
+[ext_resource type="Texture2D" uid="uid://dn6m64vw76p00" path="res://Art/Tiles/SET1_bakcground_night3.png" id="4_bl6vh"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_aaqby")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.01, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Set1BakcgroundNight1" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(0, 280)
+texture = ExtResource("2_6s66x")
+
+[node name="Set1BakcgroundNight2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(640, 280)
+texture = ExtResource("2_6s66x")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.02, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Set1BakcgroundNight2" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(0, 280)
+texture = ExtResource("3_xg22t")
+
+[node name="Set1BakcgroundNight3" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(640, 280)
+texture = ExtResource("3_xg22t")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.04, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Set1BakcgroundNight3" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(0, 280)
+texture = ExtResource("4_bl6vh")
+
+[node name="Set1BakcgroundNight4" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(640, 280)
+texture = ExtResource("4_bl6vh")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.04, 0)
+motion_mirroring = Vector2(1280, 0)

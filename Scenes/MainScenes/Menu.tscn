@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://omlp6707jdpd"]
+
+[ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_q7brq"]
+[ext_resource type="PackedScene" uid="uid://dsan41150ncqa" path="res://Scenes/UtilityScenes/day_bg.tscn" id="2_5f0g6"]
+[ext_resource type="Texture2D" uid="uid://jm0ei54ln7si" path="res://Art/UI/SkywalkerTitle2.png" id="3_unng5"]
+[ext_resource type="AudioStream" uid="uid://cwb6ogrp0iddd" path="res://Audio/Background/10 - Peace, The Jedi Consular - Mark Griskey, Gordy Haab, Jesse Harlin, Lennie Moore & Wilbert Roget, II.mp3" id="5_iexit"]
+[ext_resource type="Theme" uid="uid://dvqg3mlr181xd" path="res://Themes/default_theme.tres" id="10_obvo1"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_q7brq")
+
+[node name="DayBG" parent="." instance=ExtResource("2_5f0g6")]
+
+[node name="GameTitle" type="Sprite2D" parent="."]
+position = Vector2(963.376, 301.75)
+scale = Vector2(1.40078, 1.40078)
+texture = ExtResource("3_unng5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 660.0
+offset_right = 1924.0
+offset_bottom = 994.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_obvo1")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_right = 1921.0
+offset_bottom = 1079.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="Control/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Play"
+
+[node name="Archives" type="Button" parent="Control/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Archives"
+
+[node name="Settings" type="Button" parent="Control/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="Control/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+text = "quit"
+
+[node name="backgroundmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_iexit")
+volume_db = -19.5
+autoplay = true
+bus = &"music"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer2/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer2/Archives" to="." method="_on_archives_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer2/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]

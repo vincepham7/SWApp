@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dvqg3mlr181xd"]
+
+[ext_resource type="FontFile" uid="uid://eqvni8ighje2" path="res://Themes/Font/Starjedi.ttf" id="1_8xblj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_re3i1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_abp04"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wxg7i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhnya"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1hdh"]
+
+[resource]
+default_font = ExtResource("1_8xblj")
+default_font_size = 50
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0.167969, 0.210938, 0.265625, 1)
+Button/colors/font_hover_color = Color(0.167969, 0.210938, 0.265625, 1)
+Button/colors/font_outline_color = Color(0.8125, 0.742188, 0.117188, 1)
+Button/colors/font_pressed_color = Color(0.168627, 0.211765, 0.266667, 0)
+Button/constants/h_separation = 2
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 4
+Button/styles/disabled = SubResource("StyleBoxEmpty_re3i1")
+Button/styles/focus = SubResource("StyleBoxEmpty_abp04")
+Button/styles/hover = SubResource("StyleBoxEmpty_wxg7i")
+Button/styles/normal = SubResource("StyleBoxEmpty_vhnya")
+Button/styles/pressed = SubResource("StyleBoxEmpty_h1hdh")

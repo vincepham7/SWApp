@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsan41150ncqa"]
+
+[ext_resource type="Script" path="res://Scripts/day_bg.gd" id="1_a0b3o"]
+[ext_resource type="Texture2D" uid="uid://c3303tf1k85xu" path="res://Art/Tiles/SET1_bakcground_day1.png" id="1_tngom"]
+[ext_resource type="Texture2D" uid="uid://b5nj81ckui7yu" path="res://Art/Background/junglemountain1.png" id="2_hjsq8"]
+[ext_resource type="Texture2D" uid="uid://deo2pdsa4oexa" path="res://Art/Background/junglemountain3.png" id="3_23pyb"]
+[ext_resource type="Texture2D" uid="uid://dg0vc8lhb3ndj" path="res://Art/Background/junglemountain2.png" id="4_g1ob6"]
+[ext_resource type="Texture2D" uid="uid://kivoxgxbl6ta" path="res://Art/Background/xwing3.png" id="6_m3df2"]
+[ext_resource type="Script" path="res://Scripts/Xwing3.gd" id="7_h7oiq"]
+
+[sub_resource type="Curve2D" id="Curve2D_6uck7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 176, 320, 0, 0, 0, 0, 112, 456, 0, 0, 0, 0, 216, 504, 0, 0, 0, 0, 292, 452, 0, 0, 0, 0, 468, 436, 0, 0, 0, 0, 320, 400, 0, 0, 0, 0, 280, 360, 0, 0, 0, 0, 244, 300, 0, 0, 0, 0, 256, 208, 0, 0, 0, 0, 128, 256, 0, 0, 0, 0, 176, 320)
+}
+point_count = 11
+
+[node name="DayBG" type="ParallaxBackground"]
+script = ExtResource("1_a0b3o")
+
+[node name="Sky" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Set1BakcgroundDay1" type="Sprite2D" parent="Sky"]
+position = Vector2(960, 538.5)
+scale = Vector2(3, 2.92663)
+texture = ExtResource("1_tngom")
+
+[node name="Treeline" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(2059, 0)
+
+[node name="Junglemountain1" type="Sprite2D" parent="Treeline"]
+position = Vector2(156, 926)
+scale = Vector2(2.40625, 2.40625)
+texture = ExtResource("2_hjsq8")
+
+[node name="Junglemountain3" type="Sprite2D" parent="Treeline"]
+position = Vector2(462.5, 948.633)
+scale = Vector2(2.38281, 2.38281)
+texture = ExtResource("3_23pyb")
+
+[node name="Junglemountain2" type="Sprite2D" parent="Treeline"]
+position = Vector2(749, 826.339)
+scale = Vector2(2.39286, 2.39286)
+texture = ExtResource("4_g1ob6")
+
+[node name="Junglemountain4" type="Sprite2D" parent="Treeline"]
+position = Vector2(1036, 927)
+scale = Vector2(2.40625, 2.40625)
+texture = ExtResource("2_hjsq8")
+
+[node name="Junglemountain5" type="Sprite2D" parent="Treeline"]
+position = Vector2(1338, 948)
+scale = Vector2(2.38281, 2.38281)
+texture = ExtResource("3_23pyb")
+
+[node name="Junglemountain6" type="Sprite2D" parent="Treeline"]
+position = Vector2(1624, 826.161)
+scale = Vector2(2.39286, 2.39286)
+texture = ExtResource("4_g1ob6")
+
+[node name="Junglemountain7" type="Sprite2D" parent="Treeline"]
+position = Vector2(1909, 948)
+scale = Vector2(2.38281, 2.38281)
+texture = ExtResource("3_23pyb")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(28, 28)
+curve = SubResource("Curve2D_6uck7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(175.703, 320.63)
+rotation = 1.5708
+progress = 1.0
+rotates = false
+
+[node name="Xwing3" type="Sprite2D" parent="Path2D/PathFollow2D"]
+position = Vector2(8.1308, 0)
+rotation = -1.5708
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("6_m3df2")
+script = ExtResource("7_h7oiq")

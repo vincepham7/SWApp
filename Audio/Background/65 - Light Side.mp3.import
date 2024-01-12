@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0835yb4170ju"
+path="res://.godot/imported/65 - Light Side.mp3-4ac62ce06cfd9e31818cb0ddb907c9d6.mp3str"
+
+[deps]
+
+source_file="res://Audio/Background/65 - Light Side.mp3"
+dest_files=["res://.godot/imported/65 - Light Side.mp3-4ac62ce06cfd9e31818cb0ddb907c9d6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

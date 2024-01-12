@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5vkuviq2sg3u"]
+
+[ext_resource type="Script" path="res://Scripts/Login.gd" id="1_x05yt"]
+[ext_resource type="Theme" uid="uid://dj4gh1nn7ignp" path="res://Themes/settingtheme.tres" id="2_b8kjk"]
+[ext_resource type="PackedScene" uid="uid://dodgf2q7rdsde" path="res://Scenes/UtilityScenes/login_bg.tscn" id="3_ybf0i"]
+[ext_resource type="AudioStream" uid="uid://doxn1p301s7tb" path="res://Audio/Background/02 - Prologue.mp3" id="4_22gxo"]
+
+[node name="Login" type="Node2D"]
+script = ExtResource("1_x05yt")
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = ExtResource("2_b8kjk")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.0666667, 0.0862745, 0.121569, 1)
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -480.0
+offset_right = 480.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+theme = ExtResource("2_b8kjk")
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HeaderVBox" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_b8kjk")
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/MarginContainer/HeaderVBox"]
+layout_mode = 2
+size_flags_vertical = 2
+theme = ExtResource("2_b8kjk")
+theme_override_font_sizes/font_size = 100
+text = "Login"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/HeaderVBox/Label"]
+layout_mode = 2
+offset_left = -43.0
+offset_top = 286.0
+offset_right = 853.0
+offset_bottom = 972.0
+
+[node name="VolumeVBox" type="VBoxContainer" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer"]
+layout_mode = 2
+
+[node name="AuthorizationStatus" type="Label" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="username" type="Label" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/VBoxContainer"]
+layout_mode = 2
+text = "uSer nAmE"
+
+[node name="inputUsername" type="LineEdit" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "username"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="password" type="Label" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/VBoxContainer2"]
+layout_mode = 2
+text = "PASSwoRd"
+
+[node name="inputPassword" type="LineEdit" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/VBoxContainer2"]
+layout_mode = 2
+placeholder_text = "Password"
+secret = true
+
+[node name="ButtonsVBox" type="VBoxContainer" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Submit" type="Button" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/ButtonsVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Submit"
+
+[node name="Button" type="Button" parent="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/ButtonsVBox"]
+layout_mode = 2
+text = "quit"
+
+[node name="login_bg" parent="Control" instance=ExtResource("3_ybf0i")]
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="backgroundmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_22gxo")
+volume_db = -19.5
+autoplay = true
+bus = &"music"
+
+[connection signal="pressed" from="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/ButtonsVBox/Submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/HeaderVBox/Label/MarginContainer/VolumeVBox/ButtonsVBox/Button" to="." method="_on_button_pressed"]

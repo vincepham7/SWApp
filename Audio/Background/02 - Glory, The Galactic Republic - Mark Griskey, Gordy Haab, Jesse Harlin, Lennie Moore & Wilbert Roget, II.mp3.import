@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnhp1ilbgcmau"
+path="res://.godot/imported/02 - Glory, The Galactic Republic - Mark Griskey, Gordy Haab, Jesse Harlin, Lennie Moore & Wilbert Roget, II.mp3-79f673bd7a8e1e939e0193eb3d00dcab.mp3str"
+
+[deps]
+
+source_file="res://Audio/Background/02 - Glory, The Galactic Republic - Mark Griskey, Gordy Haab, Jesse Harlin, Lennie Moore & Wilbert Roget, II.mp3"
+dest_files=["res://.godot/imported/02 - Glory, The Galactic Republic - Mark Griskey, Gordy Haab, Jesse Harlin, Lennie Moore & Wilbert Roget, II.mp3-79f673bd7a8e1e939e0193eb3d00dcab.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

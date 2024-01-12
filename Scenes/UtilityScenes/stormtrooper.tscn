@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://dsy4qqewkcufu"]
+
+[ext_resource type="Script" path="res://Scripts/Stormtrooper.gd" id="1_phko4"]
+[ext_resource type="Texture2D" uid="uid://bpaxlumjj7wcv" path="res://Art/Sprites/Game Boy Advance - Star Wars Trilogy Apprentice of the Force - Stormtrooper.png" id="2_qrlqa"]
+[ext_resource type="PackedScene" uid="uid://bjssvxenx8ugi" path="res://Scenes/UtilityScenes/blaster.tscn" id="2_y8pu7"]
+[ext_resource type="AudioStream" uid="uid://bv6hf8ms6um8u" path="res://Audio/Sound Effects/Laser Blasts.mp3" id="4_e5gkv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yujw8"]
+atlas = ExtResource("2_qrlqa")
+region = Rect2(88, 426, 43, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w0c3"]
+atlas = ExtResource("2_qrlqa")
+region = Rect2(131, 426, 43, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkdph"]
+atlas = ExtResource("2_qrlqa")
+region = Rect2(174, 426, 43, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b02oe"]
+atlas = ExtResource("2_qrlqa")
+region = Rect2(217, 426, 43, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ee3x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yujw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6w0c3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkdph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b02oe")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="troopermob" type="Node2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_phko4")
+ammo = ExtResource("2_y8pu7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-18, -24)
+sprite_frames = SubResource("SpriteFrames_2ee3x")
+animation = &"idle"
+frame_progress = 0.661169
+flip_h = true
+
+[node name="stormtrooper" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-18, -24)
+texture = ExtResource("2_qrlqa")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(220, 516, 41, 43)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-37, -28)
+exclude_parent = false
+target_position = Vector2(-74, 0)
+hit_from_inside = true
+
+[node name="ReloadTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="laserblast" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_e5gkv")
+volume_db = -30.0
+bus = &"effects"
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

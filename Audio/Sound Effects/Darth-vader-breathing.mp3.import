@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chweyh6drp848"
+path="res://.godot/imported/Darth-vader-breathing.mp3-7ef454b6b21c32085e124eccf57f9136.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/Darth-vader-breathing.mp3"
+dest_files=["res://.godot/imported/Darth-vader-breathing.mp3-7ef454b6b21c32085e124eccf57f9136.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

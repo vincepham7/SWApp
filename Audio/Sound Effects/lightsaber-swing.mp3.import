@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bu34k8felu01g"
+path="res://.godot/imported/lightsaber-swing.mp3-5d33deb3964a5f20b2590a1afc4d4b62.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/lightsaber-swing.mp3"
+dest_files=["res://.godot/imported/lightsaber-swing.mp3-5d33deb3964a5f20b2590a1afc4d4b62.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

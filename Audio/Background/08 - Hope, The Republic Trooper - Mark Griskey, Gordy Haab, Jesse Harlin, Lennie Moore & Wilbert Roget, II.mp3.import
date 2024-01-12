@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2um0ycfplvmj"
+path="res://.godot/imported/08 - Hope, The Republic Trooper - Mark Griskey, Gordy Haab, Jesse Harlin, Lennie Moore & Wilbert Roget, II.mp3-31b2560d99fefdaf8323c76cdad93408.mp3str"
+
+[deps]
+
+source_file="res://Audio/Background/08 - Hope, The Republic Trooper - Mark Griskey, Gordy Haab, Jesse Harlin, Lennie Moore & Wilbert Roget, II.mp3"
+dest_files=["res://.godot/imported/08 - Hope, The Republic Trooper - Mark Griskey, Gordy Haab, Jesse Harlin, Lennie Moore & Wilbert Roget, II.mp3-31b2560d99fefdaf8323c76cdad93408.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

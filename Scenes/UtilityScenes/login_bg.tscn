@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://dodgf2q7rdsde"]
+
+[ext_resource type="Script" path="res://Scripts/ParallaxBackground.gd" id="1_w5lpl"]
+[ext_resource type="Texture2D" uid="uid://8s35e1umjefg" path="res://Art/Background/Loginbackground/background_1.png" id="3_8byk3"]
+[ext_resource type="Texture2D" uid="uid://prdr5g4phme0" path="res://Art/Background/Loginbackground/galaxy-simple-bg.png" id="3_ur22q"]
+[ext_resource type="Texture2D" uid="uid://dy5ltjkt10k16" path="res://Art/Background/Loginbackground/vader-ship1.png" id="4_fa0dy"]
+[ext_resource type="Texture2D" uid="uid://bvtebdkiporab" path="res://Art/Background/Loginbackground/tie-fighter1.png" id="5_5wsdi"]
+[ext_resource type="Texture2D" uid="uid://cjcu5abhm0gnr" path="res://Art/Background/Loginbackground/x-wing2.png" id="5_hyh16"]
+
+[node name="LoginBG" type="ParallaxBackground"]
+script = ExtResource("1_w5lpl")
+
+[node name="spacebackground" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(3820, 0)
+
+[node name="Galaxy-simple-bg" type="Sprite2D" parent="spacebackground"]
+position = Vector2(961.25, 543)
+scale = Vector2(7.51961, 4.24219)
+texture = ExtResource("3_ur22q")
+
+[node name="Galaxy-simple-bg2" type="Sprite2D" parent="spacebackground"]
+position = Vector2(2868.25, 543)
+rotation = 3.14159
+scale = Vector2(7.51961, 4.24219)
+texture = ExtResource("3_ur22q")
+
+[node name="starlayer" type="ParallaxLayer" parent="."]
+position = Vector2(728, 193)
+motion_scale = Vector2(1.1, 1.1)
+motion_mirroring = Vector2(1900, 0)
+
+[node name="Background1" type="Sprite2D" parent="starlayer"]
+position = Vector2(272.5, 344.5)
+rotation = 1.5708
+scale = Vector2(9, 9)
+texture = ExtResource("3_8byk3")
+
+[node name="Background2" type="Sprite2D" parent="starlayer"]
+position = Vector2(928.5, 344.5)
+rotation = 0.544543
+scale = Vector2(9, 9)
+texture = ExtResource("3_8byk3")
+
+[node name="Tie Fighters R" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(4.2, 1)
+motion_mirroring = Vector2(8500, 0)
+
+[node name="Tie-fighter1" type="Sprite2D" parent="Tie Fighters R"]
+position = Vector2(-350.449, 254)
+texture = ExtResource("5_5wsdi")
+
+[node name="Tie-fighter2" type="Sprite2D" parent="Tie Fighters R"]
+position = Vector2(-210.449, 353)
+texture = ExtResource("5_5wsdi")
+
+[node name="Tie-fighter3" type="Sprite2D" parent="Tie Fighters R"]
+position = Vector2(-295.449, 390)
+texture = ExtResource("5_5wsdi")
+
+[node name="Tie-fighter4" type="Sprite2D" parent="Tie Fighters R"]
+position = Vector2(-181.449, 281)
+texture = ExtResource("5_5wsdi")
+
+[node name="Tie-fighter5" type="Sprite2D" parent="Tie Fighters R"]
+position = Vector2(-271.449, 217)
+texture = ExtResource("5_5wsdi")
+
+[node name="Tie-fighter6" type="Sprite2D" parent="Tie Fighters R"]
+position = Vector2(-319.449, 304)
+texture = ExtResource("5_5wsdi")
+
+[node name="Vader-ship1" type="Sprite2D" parent="Tie Fighters R"]
+position = Vector2(-609, 293.726)
+texture = ExtResource("4_fa0dy")
+
+[node name="xwing R" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(4.2, 1)
+motion_mirroring = Vector2(8500, 0)
+
+[node name="X-wing2" type="Sprite2D" parent="xwing R"]
+position = Vector2(-54, 315.726)
+texture = ExtResource("5_hyh16")
+
+[node name="Tie Fighters L" type="ParallaxLayer" parent="."]
+unique_name_in_owner = true
+motion_scale = Vector2(-2.5, -1)
+motion_mirroring = Vector2(5000, 0)
+
+[node name="Tie-fighter1" type="Sprite2D" parent="Tie Fighters L"]
+position = Vector2(3754.05, 693.5)
+rotation = -3.14159
+texture = ExtResource("5_5wsdi")
+
+[node name="Tie-fighter2" type="Sprite2D" parent="Tie Fighters L"]
+position = Vector2(3894.05, 792.5)
+rotation = -3.14159
+texture = ExtResource("5_5wsdi")
+
+[node name="Tie-fighter3" type="Sprite2D" parent="Tie Fighters L"]
+position = Vector2(3809.05, 829.5)
+rotation = -3.14159
+texture = ExtResource("5_5wsdi")
+
+[node name="Tie-fighter4" type="Sprite2D" parent="Tie Fighters L"]
+position = Vector2(3923.05, 720.5)
+rotation = -3.14159
+texture = ExtResource("5_5wsdi")
+
+[node name="Tie-fighter5" type="Sprite2D" parent="Tie Fighters L"]
+position = Vector2(3688.5, 600.5)
+rotation = -3.14159
+texture = ExtResource("5_5wsdi")
+
+[node name="Tie-fighter6" type="Sprite2D" parent="Tie Fighters L"]
+position = Vector2(3785.05, 743.5)
+rotation = -3.14159
+texture = ExtResource("5_5wsdi")
+
+[node name="Vader-ship1" type="Sprite2D" parent="Tie Fighters L"]
+position = Vector2(4203.5, 658.5)
+rotation = -3.14159
+texture = ExtResource("4_fa0dy")
+
+[node name="xwing L" type="ParallaxLayer" parent="."]
+unique_name_in_owner = true
+motion_scale = Vector2(-2.5, -1)
+motion_mirroring = Vector2(5000, 0)
+
+[node name="X-wing2" type="Sprite2D" parent="xwing L"]
+position = Vector2(3513, 717)
+rotation = -3.14159
+texture = ExtResource("5_hyh16")

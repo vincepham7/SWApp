@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://brtfdmi6rd61d"]
+
+[ext_resource type="VideoStream" path="res://Art/Cinematics/StarWars_Shadows_of_Yavin_IV_Intro.ogv" id="1_whxjw"]
+[ext_resource type="Script" path="res://Scripts/Intro_Cinematic.gd" id="2_tfl8m"]
+[ext_resource type="Theme" uid="uid://dj4gh1nn7ignp" path="res://Themes/settingtheme.tres" id="3_7x02y"]
+[ext_resource type="FontFile" uid="uid://c6qhfk3phjwa5" path="res://Themes/Font/soloist1.ttf" id="4_vaihh"]
+
+[node name="Intro_Cinematic" type="Node2D"]
+script = ExtResource("2_tfl8m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+offset_left = -1056.0
+offset_top = -678.0
+offset_right = 1060.0
+offset_bottom = 630.0
+color = Color(0, 0, 0, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Camera2D"]
+offset_left = -958.0
+offset_top = -542.0
+offset_right = 962.0
+offset_bottom = 546.0
+stream = ExtResource("1_whxjw")
+autoplay = true
+expand = true
+
+[node name="Button" type="Button" parent="Camera2D"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 495.0
+offset_top = -538.0
+offset_right = 924.0
+offset_bottom = -485.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("3_7x02y")
+theme_override_fonts/font = ExtResource("4_vaihh")
+text = "Skip Cutscene"
+
+[connection signal="finished" from="Camera2D/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="Camera2D/Button" to="." method="_on_button_pressed"]
